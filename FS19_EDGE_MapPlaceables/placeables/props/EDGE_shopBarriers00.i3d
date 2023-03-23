@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="EDGEsellingStationGeneric01" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+    <Asset>
+        <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+    </Asset>
+    <Files>
+        <File fileId="6" filename="../dekoBuildings/data/textures/craterBay/textures/FS17/back_of_sign_so_not_enter.png"/>
+        <File fileId="5" filename="../dekoBuildings/data/textures/craterBay/textures/FS17/sign_do_not_enter.png"/>
+        <File fileId="2" filename="../textures/railroadCrossing_diffuse.dds"/>
+        <File fileId="3" filename="$data/maps\textures/american/props/railroadCrossing_normal.dds"/>
+        <File fileId="4" filename="$data/maps\textures/american/props/railroadCrossing_specular.dds"/>
+        <File fileId="8" filename="$data/shaders/emissiveLightsShader.xml"/>
+        <File fileId="7" filename="$data/shared/coronaRed_diffuse.dds"/>
+    </Files>
+    <Materials>
+        <Material name="back_of_sign_750mm" materialId="420">
+            <Texture fileId="6"/>
+        </Material>
+        <Material name="coronaBlinkingRed_mat" materialId="318" alphaBlending="true" customShaderId="8" customShaderVariation="BILLBOARD_TURNLIGHT">
+            <Emissivemap fileId="7"/>
+            <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+        </Material>
+        <Material name="gray_mat" materialId="422" diffuseColor="0.584314 0.584314 0.584314 1"/>
+        <Material name="railroadCrossing_mat" materialId="319">
+            <Texture fileId="2"/>
+            <Normalmap fileId="3" bumpDepth="0.3"/>
+            <Glossmap fileId="4"/>
+        </Material>
+        <Material name="sign_750mm" materialId="423">
+            <Texture fileId="5"/>
+        </Material>
+    </Materials>
+    <Shapes externalShapesFile="EDGE_shopBarriers00.i3d.shapes"/>
+    <Dynamics/>
+    <Scene>
+        <TransformGroup name="shopBarriers" nodeId="408">
+            <TransformGroup name="shopBarrier00" translation="17.067 0 0" nodeId="354">
+                <Shape shapeId="1" name="barrierTrigger" translation="0 -1.35019e-06 0" rotation="-7.84145e-06 0 0" scale="1 1 0.267287" static="true" trigger="true" collisionMask="14688256" clipDistance="1300" nodeId="452" materialIds="422" nonRenderable="true">
+                    <Shape shapeId="2" name="barrier00" translation="-4.51637 0.198639 -8.41307" rotation="5.86745e-05 -8.22017e-12 8.02702e-06" scale="1 1 3.7413" static="true" clipDistance="400" nodeId="355" materialIds="319" castsShadows="true" receiveShadows="true">
+                        <Shape shapeId="3" name="armBarrier00" translation="0 1.30001 -0.15" kinematic="true" clipDistance="400" nodeId="356" materialIds="319" castsShadows="true" receiveShadows="true">
+                            <TransformGroup name="signDoNotEnter" translation="-0.016922 3.081 0.407" rotation="-90 7.89844e-06 90" scale="0.6 0.6 1" clipDistance="300" nodeId="455">
+                                <Shape shapeId="4" name="sign" rotation="90 0 0" clipDistance="150" nodeId="456" materialIds="423" castsShadows="true" receiveShadows="true"/>
+                                <Shape shapeId="4" name="back_of_sign" translation="1.54e-08 0 0" rotation="-90 0 180" clipDistance="150" nodeId="457" materialIds="420" castsShadows="true" receiveShadows="true"/>
+                            </TransformGroup>
+                        </Shape>
+                        <TransformGroup name="signals" visibility="false" nodeId="358">
+                            <Shape shapeId="5" name="coronaLeft" translation="0.304506 2.10424 0.281461" rotation="0 90 0" clipDistance="129" nodeId="359" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="0 0 3.55271e-17" rotation="0 1.41245e-30 -1.85759e-29" nodeId="360" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                            <Shape shapeId="5" name="coronaRight" translation="0.304506 2.10424 -0.279689" rotation="0 90 0" clipDistance="129" nodeId="361" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="3.55271e-17 0 0" rotation="0 1.41245e-30 -1.85759e-29" nodeId="362" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                            <Shape shapeId="5" name="coronaLeftBack" translation="-0.305 2.10424 0.281461" rotation="0 270 0" clipDistance="129" nodeId="363" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="0 0 3.55271e-17" rotation="0 1.41245e-30 -1.85759e-29" nodeId="364" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                            <Shape shapeId="5" name="coronaRightBack" translation="-0.305 2.10424 -0.279689" rotation="0 270 0" clipDistance="129" nodeId="365" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="3.55271e-17 0 0" rotation="0 1.41245e-30 -1.85759e-29" nodeId="366" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                        </TransformGroup>
+                    </Shape>
+                </Shape>
+            </TransformGroup>
+            <TransformGroup name="shopBarrier01" translation="-10.1151 0 2.37633e-06" rotation="0 180 0" nodeId="467">
+                <Shape shapeId="1" name="barrierTrigger" translation="0 -1.35019e-06 0" rotation="-7.84145e-06 0 -6.68918e-06" scale="1 1 0.267287" static="true" trigger="true" collisionMask="14688256" clipDistance="1300" nodeId="468" materialIds="422" nonRenderable="true">
+                    <Shape shapeId="2" name="barrier01" translation="4.49439 0.198639 -8.41307" rotation="5.86745e-05 -8.22017e-12 0" scale="1 1 3.7413" static="true" clipDistance="400" nodeId="469" materialIds="319" castsShadows="true" receiveShadows="true">
+                        <Shape shapeId="3" name="armBarrier01" translation="0 1.30001 -0.15" kinematic="true" clipDistance="400" nodeId="470" materialIds="319" castsShadows="true" receiveShadows="true">
+                            <TransformGroup name="signDoNotEnter" translation="0.0150272 3.081 0.407" rotation="-90 1.12912e-07 -90" scale="0.6 0.6 1" clipDistance="300" nodeId="471">
+                                <Shape shapeId="4" name="sign" rotation="90 0 0" clipDistance="150" nodeId="472" materialIds="423" castsShadows="true" receiveShadows="true"/>
+                                <Shape shapeId="4" name="back_of_sign" translation="1.54e-08 0 0" rotation="-90 0 180" clipDistance="150" nodeId="473" materialIds="420" castsShadows="true" receiveShadows="true"/>
+                            </TransformGroup>
+                        </Shape>
+                        <TransformGroup name="signals" visibility="false" nodeId="474">
+                            <Shape shapeId="5" name="coronaLeft" translation="0.304506 2.10424 0.281461" rotation="0 90 0" clipDistance="129" nodeId="475" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="0 0 3.55271e-17" rotation="0 1.41245e-30 -1.85759e-29" nodeId="476" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                            <Shape shapeId="5" name="coronaRight" translation="0.304506 2.10424 -0.279689" rotation="0 90 0" clipDistance="129" nodeId="477" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="3.55271e-17 0 0" rotation="0 1.41245e-30 -1.85759e-29" nodeId="478" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                            <Shape shapeId="5" name="coronaLeftBack" translation="-0.305 2.10424 0.281461" rotation="0 270 0" clipDistance="129" nodeId="479" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="0 0 3.55271e-17" rotation="0 1.41245e-30 -1.85759e-29" nodeId="480" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                            <Shape shapeId="5" name="coronaRightBack" translation="-0.305 2.10424 -0.279689" rotation="0 270 0" clipDistance="129" nodeId="481" materialIds="318" castsShadows="true" receiveShadows="true">
+                                <Light name="pointLight1" translation="3.55271e-17 0 0" rotation="0 1.41245e-30 -1.85759e-29" nodeId="482" type="point" color="1 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+                            </Shape>
+                        </TransformGroup>
+                    </Shape>
+                </Shape>
+            </TransformGroup>
+        </TransformGroup>
+    </Scene>
+    <UserAttributes>
+        <UserAttribute nodeId="452">
+            <Attribute name="onCreate" type="scriptCallback" value="Barrier.onCreate"/>
+        </UserAttribute>
+        <UserAttribute nodeId="468">
+            <Attribute name="onCreate" type="scriptCallback" value="Barrier.onCreate"/>
+        </UserAttribute>
+    </UserAttributes>
+</i3D>

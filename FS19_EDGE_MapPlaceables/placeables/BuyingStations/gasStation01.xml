@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_shopItem_gasStation</name>
+        <functions>
+            <function>$l10n_function_sellingStation</function>
+            <function>$l10n_function_EDGELights</function>
+        </functions>
+        <specs>
+            <fillTypes>diesel water fuel def</fillTypes>
+        </specs>
+        <image>store/store_gasStation01.dds</image>
+        <boughtWithFarmland>true</boughtWithFarmland>
+        <price>5000</price>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>EDGE</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+    </storeData>
+
+    <placeableType>buyingStation</placeableType>
+    <filename>placeables/BuyingStations/gasStation01.i3d</filename>
+    <placement testSizeX="5" testSizeZ="10" sizeX="3" sizeZ="3" useRandomYRotation="false" useManualYRotation="true" />
+    <hotspots>
+        <hotspot name="$l10n_station_sellingStation" fullName="$l10n_shopItem_sellingStation" linkNode="1" imageFilename="maps/hud/mapHotspots2_1024.dds" imageUVs="800 800 205 205" blinking="false" persistent="false" showName="false"  hidable="true" category="CATEGORY_DEFAULT" />
+    </hotspots>
+    <buyingStation stationName="$l10n_station_gasStation" appearsOnPDA="false" storageRadius="0" fillSoundIdentifier="fillSound01" hotspotImageName="GAS_STATION" showHotspotText="false">
+        <loadTrigger triggerNode="0" fillLitersPerSecond="50" autoStart="true" infiniteCapacity="true"/>
+        <fillType name="diesel" priceScale="1" />
+        <fillType name="water" priceScale="0" />
+        <fillType name="fuel" priceScale="1" />
+        <fillType name="def" priceScale="1" />
+    </buyingStation>
+</placeable>

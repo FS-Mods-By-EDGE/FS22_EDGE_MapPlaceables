@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="../textures/concreteItems_diffuse.dds"/>
+    <File fileId="3" filename="../textures/concreteItems_normal.dds"/>
+    <File fileId="4" filename="../textures/concreteItems_specular.dds"/>
+    <File fileId="5" filename="$data/shaders/buildingShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lambert1" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="station_mat" materialId="5" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="unloadingStation" materialId="4" customShaderId="5">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="sellingStationGeneric.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="sellingStationGeneric" nodeId="11">
+      <TransformGroup name="unloadingStation" nodeId="12">
+        <TransformGroup name="unloadTriggers" nodeId="13">
+          <Shape shapeId="1" name="exactFillRoot" translation="0 0.3 0" static="true" collisionMask="1073741824" nodeId="14" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="1" name="baleTrigger" translation="0 0.7 0" static="true" trigger="true" collisionMask="16781312" nodeId="15" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="2" name="unloadingStationSA" clipDistance="300" nodeId="16" materialIds="5" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="collision" translation="0 -0.871023 0" nodeId="17">
+          <Shape shapeId="3" name="collision" translation="0 1.02245 0" visibility="false" static="true" clipDistance="300" nodeId="18" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

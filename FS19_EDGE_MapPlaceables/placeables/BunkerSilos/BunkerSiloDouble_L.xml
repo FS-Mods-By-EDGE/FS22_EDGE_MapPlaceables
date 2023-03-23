@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_shopItem_bunkerSiloDouble</name>
+        <functions>
+            <function>$l10n_function_bunkerSiloDouble</function>
+        </functions>
+        <specs>
+            <fillTypeCategories>FORAGEWAGON</fillTypeCategories>
+        </specs>
+        <image>store/store_BunkerSiloDouble_L.dds</image>
+        <boughtWithFarmland>true</boughtWithFarmland>
+        <price>30000</price>
+        <dailyUpkeep>5</dailyUpkeep>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>EDGE</brand>
+        <species>placeable</species>
+        <category>silos</category>
+    </storeData>
+    <placeableType>bunkerSiloPlaceable</placeableType>
+    <filename>BunkerSiloDouble_L.i3d</filename>
+    <placement testSizeX="40" testSizeZ="85" sizeX="35" sizeZ="80" useRandomYRotation="false" useManualYRotation="true" placementPositionSnapSize="0.5" placementRotationSnapAngle="45"/>
+    <bunkerSilos>
+        <bunkerSilo acceptedfillTypeCategories="FORAGEWAGON" inputFillType="chaff" outputFillType="silage" fermentingHours="12" distanceToCompactedFillLevel="100" openingLength="25" >
+            <area startNode="4|3|0|0|0" widthNode="4|3|0|0|0" heightNode="4|3|0|0|0" />
+            <interactionTrigger node="4|3|0|0|0" />
+        </bunkerSilo>
+        <bunkerSilo acceptedfillTypeCategories="FORAGEWAGON" inputFillType="chaff" outputFillType="silage" fermentingHours="12" distanceToCompactedFillLevel="100" openingLength="25" >
+            <area startNode="4|3|1|0|1" widthNode="4|3|1|0|1|0" heightNode="4|3|1|0|1|1" />
+            <interactionTrigger node="4|3|1|0|0" />
+        </bunkerSilo>
+    </bunkerSilos>
+    <clearAreas>
+        <clearArea startNode="4|2|0" widthNode="4|2|0|0" heightNode="4|2|0|1"/>
+    </clearAreas>
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="4|0|0" widthNode="4|0|0|0" heightNode="4|0|0|1"/>
+        </levelAreas>
+    </leveling>
+    <seasons>
+        <maskAreas>
+            <!--<maskArea startNode="" widthNode="" heightNode="" />-->
+        </maskAreas>
+    </seasons>
+    <triggerMarkers>
+        <triggerMarker node="5" />
+    </triggerMarkers>
+    <tipOcclusionUpdateArea sizeX="19" sizeZ="24" />
+</placeable>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Crater Bay" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="7" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/CBSignBack_diffuse.dds"/>
+    <File fileId="8" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/CBSignBack_normal.dds"/>
+    <File fileId="9" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/CBSignBack_specular.dds"/>
+    <File fileId="5" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/CBSign_normal.dds"/>
+    <File fileId="6" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/CBSign_specular.dds" colorProfile="sRGB"/>
+    <File fileId="4" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/CraterBaySign_diffuse.dds"/>
+    <File fileId="1" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/woodenPost_diffuse.dds"/>
+    <File fileId="2" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/woodenPost_normal.dds"/>
+    <File fileId="3" filename="../../../../FS19_Crater_Bay_By_EDGE/maps/data/textures/craterBay/woodenPost_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="CBSign_mat" materialId="31">
+      <Texture fileId="7"/>
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="9"/>
+    </Material>
+    <Material name="signBack_mat" materialId="99">
+      <Texture fileId="4"/>
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+    </Material>
+    <Material name="woodenPost_mat" materialId="240">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="craterBaySign.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="sign01" translation="1163.25 61.832 -605.841" rotation="-180 0 -180" nodeId="44862">
+      <Shape shapeId="1" name="woodenPost" translation="0 0 0.00012207" static="true" collisionMask="16789538" angularDamping="0.1" rollingFriction="0.17" density="0.47" clipDistance="1500" nodeId="44863" materialIds="240" castsShadows="true" receiveShadows="true" splitType="1" splitUvs="0 0 1 0.064 1.8">
+        <Shape shapeId="2" name="sign" translation="0 1.722 0.14801" scale="0.808 1 1" clipDistance="150" nodeId="44864" materialIds="99,31" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

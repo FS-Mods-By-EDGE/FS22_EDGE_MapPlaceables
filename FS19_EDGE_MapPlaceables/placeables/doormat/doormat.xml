@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_name_farmHouseDoormat</name>
+        <functions>
+            <function>$l10n_function_farmHouseDoormat</function>
+        </functions>
+      <image>store/store_doormat.dds</image>
+      <price>100</price>
+      <dailyUpkeep>1</dailyUpkeep>
+      <lifetime>1000</lifetime>
+      <rotation>0</rotation>
+      <brand>EDGE</brand>
+      <species>placeable</species>
+      <category>farmhouses</category>
+  </storeData>
+
+  <placeableType>farmhouse</placeableType>
+  <filename>placeables/doormat/doormat.i3d</filename>
+  <placement testSizeX="0.5" testSizeZ="0.25" sizeX="0.5" sizeZ="0.25" useRandomYRotation="false" useManualYRotation="true" />
+  <farmhouse spawnNode="2|1">
+      <sleeping triggerNode="2|2" cameraNode="3"/>
+  </farmhouse>
+  <hotspots>
+      <hotspot name="$l10n_farmHouseDoormat" fullName="$l10n_name_farmHouseDoormat" linkNode="2|0" imageFilename="placeables/textures/huds/mapHotspots2_1024.dds"  imageUVs="284 23 240 205"  textColor="0.277 0.598 0.25 1" blinking="false" persistent="false" showName="true"  hidable="true" category="CATEGORY_DEFAULT" />
+  </hotspots>
+  <clearAreas>
+      <clearArea startNode="5|0|0" widthNode="5|0|0|0" heightNode="5|0|0|1"/>
+  </clearAreas>
+  <leveling requireLeveling="true" maxSmoothDistance="5" maxSlope="30" maxEdgeAngle="20">
+      <levelAreas>
+          <levelArea startNode="5|1|0" widthNode="5|1|0|0" heightNode="5|1|0|1"/>
+      </levelAreas>
+  </leveling>
+  <seasons>
+      <maskAreas>
+          <maskArea startNode="5|2|0" widthNode="5|2|0|0" heightNode="5|2|0|1"/>
+      </maskAreas>
+  </seasons>
+  <animatedObjects>
+      <animatedObject saveId="switch_01">
+          <animation duration="0.5">
+              <part node="6|0">
+                  <keyFrame time="0.0" visibility="false"/>
+                  <keyFrame time="1.0" visibility="true"/>
+              </part>
+          </animation>
+          <controls triggerNode="6|1" posAction="ACTIVATE_HANDTOOL" posText="action_turnOnIcon" negText="action_turnOffIcon"/>
+      </animatedObject>
+  </animatedObjects>
+
+  <tipOcclusionUpdateArea sizeX="0.5" sizeZ="0.25" />
+</placeable>

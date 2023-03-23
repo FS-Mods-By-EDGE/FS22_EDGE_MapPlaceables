@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_name_EDGE_squareSign</name>
+        <functions>
+            <function>$l10n_function_EDGE_Sign</function>
+        </functions>
+        <image>store/store_EDGE_squareSign.dds</image>
+        <price>5000</price>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>EDGE</brand>
+        <species>placeable</species>
+        <category>decoration</category>
+    </storeData>
+    <placeableType>placeable</placeableType>
+    <filename>placeables/props/EDGE_squareSign.i3d</filename>
+    <placement testSizeX="0.01" testSizeZ="0.01" sizeX="0.01" sizeZ="0.01" useRandomYRotation="false" useManualYRotation="true"/>
+    <incomePerHour1>30</incomePerHour1>
+    <incomePerHour2>20</incomePerHour2>
+    <incomePerHour3>10</incomePerHour3>
+    <dayNightObjects>
+        <dayNightObject node="0|1|0|0" visibleDay="true" visibleNight="true" intensityNight="0.6" intensityDay="1"/>
+    </dayNightObjects>
+    <seasons>
+        <maskAreas>
+            <!-- needs no mask -->
+        </maskAreas>
+    </seasons>
+    <tipOcclusionUpdateArea sizeX="0" sizeZ="0"/>
+</placeable>

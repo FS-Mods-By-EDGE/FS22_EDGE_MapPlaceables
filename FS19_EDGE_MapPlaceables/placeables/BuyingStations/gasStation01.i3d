@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Crater Bay" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/maps/textures/european/props/bgaPropsA_diffuse.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/props/bgaPropsA_normal.png"/>
+    <File fileId="4" filename="$data/maps/textures/european/props/bgaPropsA_specular.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/props/bgaPropsDecals_diffuse.png"/>
+    <File fileId="8" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="6" filename="$data/shared/default_normal.png"/>
+    <File fileId="7" filename="$data/shared/default_specular.png"/>
+    <File fileId="9" filename="$data/shared/window02_diffuse.png"/>
+    <File fileId="10" filename="$data/shared/window02_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="bgaPropsA_mat" materialId="12">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="bgaPropsDecals_mat" materialId="13" customShaderId="8">
+      <Texture fileId="5"/>
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="lambert1" materialId="14" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="UnnamedMaterial" materialId="4" diffuseColor="1 1 1 1">
+    </Material>
+    <Material name="window02_mat" materialId="15" alphaBlending="true">
+      <Texture fileId="9"/>
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="10"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="gasStation01.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="gasStation01" nodeId="7">
+      <Shape shapeId="1" name="gasStationTrigger" translation="0 0.728504 0" static="true" trigger="true" collisionMask="1088421888" nodeId="8" materialIds="4" nonRenderable="true" distanceBlending="false"/>
+      <TransformGroup name="mapPosition" translation="0 0 5" nodeId="9"/>
+      <Shape shapeId="2" name="fuelTank" clipDistance="100" nodeId="21" materialIds="12" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="3" name="decals" clipDistance="30" nodeId="22" materialIds="13" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="4" name="glass" clipDistance="50" nodeId="23" materialIds="15" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="5" name="col" translation="0.067292 1.17066 0.269707" visibility="false" static="true" nodeId="24" materialIds="14" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="7">
+      <Attribute name="mapPositionIndex" type="string" value="1"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

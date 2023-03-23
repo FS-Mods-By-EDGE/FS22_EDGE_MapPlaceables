@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_shopItem_weightStation</name>
+		<functions>
+            <function>$l10n_function_weighStation</function>
+        </functions>
+        <image>store/store_weightStation.dds</image>
+        <price>10000</price>
+        <dailyUpkeep>30</dailyUpkeep>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>EDGE</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+    </storeData>
+
+    <placeableType>weighStationPlaceable</placeableType>
+    <filename>weightStation.i3d</filename>
+    <placement testSizeX="4" testSizeZ="9" sizeX="4" sizeZ="9" useRandomYRotation="false" useManualYRotation="true" />
+
+	<weighStation triggerNode="6|0">
+        <displays>
+            <display node="6|1|0" useImperial="false" showZero="true"/>
+            <display node="6|1|1" useImperial="true"  showZero="true"/>
+            <display node="6|2|0" useImperial="false" showZero="true"/>
+            <display node="6|2|1" useImperial="true"  showZero="true"/>
+        </displays>
+    </weighStation>
+
+    <clearAreas>
+        <clearArea startNode="3|0" widthNode="3|0|0" heightNode="3|0|1"/>
+    </clearAreas>
+
+	 <seasons>
+        <maskAreas>
+            <maskArea startNode="4|0" widthNode="4|0|0" heightNode="4|0|1" />
+        </maskAreas>
+
+        <admirers>
+            <snowAdmirer node="4|1|0" minimumLevel="1"/>
+			<snowAdmirer node="4|1|1" minimumLevel="1"/>
+        </admirers>
+    </seasons>
+
+    <animatedObjects>
+<!--Doors-->
+	        <animatedObject saveId="Doors" >
+            <animation duration="3">
+                <part node="2|0|0|0">
+                    <keyFrame time="0" 		rotation="0 0 0" />
+                    <keyFrame time="1" 	 	rotation="0 -90 0" />
+                </part>
+            </animation>
+            <controls triggerNode="2|0|1" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+             <sounds>
+                <moving file="$data/sounds/prefab/gate/gate_loop.wav" loops="0"  volume="0.6" radius="25" innerRadius="3" fadeOut="0.25"/>
+                <posEnd file="$data/sounds/prefab/gate/gate_opened.wav"          volume="0.6" radius="25" innerRadius="3" />
+                <negEnd file="$data/sounds/prefab/gate/gate_closed.wav"          volume="0.6" radius="25" innerRadius="3" />
+            </sounds>
+        </animatedObject>
+    </animatedObjects>
+
+    <leveling requireLeveling="true" maxSmoothDistance="4" maxSlope="30" maxEdgeAngle="30" >
+        <levelAreas>
+            <levelArea startNode="5|0" widthNode="5|0|0" heightNode="5|0|1" groundType="asphalt"/>
+        </levelAreas>
+    </leveling>
+
+</placeable>

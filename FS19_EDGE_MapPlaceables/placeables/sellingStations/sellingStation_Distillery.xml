@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_name_distillery</name>
+        <functions>
+            <function>$l10n_function_distillery</function>
+            <function>$l10n_function_sellingStation</function>
+        </functions>
+        <specs>
+            <fillTypes>wheat barley sugarBeet sugarCane oat poppy hemp maize potato</fillTypes>
+        </specs>
+        <image>store/store_sellingStation.dds</image>
+        <boughtWithFarmland>true</boughtWithFarmland>
+        <price>30000</price>
+        <dailyUpkeep>30</dailyUpkeep>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>EDGE</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+    </storeData>
+    <placeableType>sellingStation</placeableType>
+    <filename>placeables/sellingStations/sellingStation.i3d</filename>
+    <placement testSizeX="9" testSizeZ="6" sizeX="8" sizeZ="5" useRandomYRotation="false" useManualYRotation="true" />
+    <dayNightObjects>
+        <dayNightObject node="2|0|0" visibleDay="false" visibleNight="true" intensityNight="0.6"/>
+        <dayNightObject node="2|1|0" visibleDay="false" visibleNight="true" intensityNight="0.6"/>
+        <dayNightObject node="2|2|0" visibleDay="false" visibleNight="true" intensityNight="0.6"/>
+        <dayNightObject node="2|3|0" visibleDay="false" visibleNight="true" intensityNight="0.6"/>
+    </dayNightObjects>
+    <hotspots>
+        <hotspot name="$l10n_distillery" fullName="$l10n_name_distillery" linkNode="1|2" imageFilename="maps/hud/mapHotspots2_1024.dds" imageUVs="790 264 240 240" blinking="false" persistent="false" showName="true"  hidable="true" category="CATEGORY_DEFAULT" />
+    </hotspots>
+    <animatedObjects>
+		<animatedObject saveId="switch_01">
+            <animation duration="0.5">
+                <part node="1|3|1|1|0">
+					<keyFrame time="0.0" rotation="-51 0 0"/>
+					<keyFrame time="1.0" rotation="90 0 0"/>
+				</part>
+				<part node="0|1">
+                    <keyFrame time="0.0" visibility="false"/>
+                    <keyFrame time="1.0" visibility="true"/>
+                </part>
+                <part node="1|3|1|1|1|0">
+                    <keyFrame time="0.0" visibility="false"/>
+                    <keyFrame time="1.0" visibility="true"/>
+                </part>
+                <part node="1|3|1|1|2|0">
+                    <keyFrame time="0.0" visibility="true"/>
+                    <keyFrame time="1.0" visibility="false"/>
+                </part>
+            </animation>
+            <controls triggerNode="1|3|1|0" posAction="ACTIVATE_HANDTOOL" posText="action_turnOnMarking" negText="action_turnOffMarking"/>
+        </animatedObject>
+		<animatedObject saveId="switch_02">
+            <animation duration="0.5">
+                <part node="1|3|2|1|0">
+					<keyFrame time="0.0" rotation="-51 0 0"/>
+					<keyFrame time="1.0" rotation="90 0 0"/>
+				</part>
+				<part node="1|3">
+                    <keyFrame time="0.0" visibility="true" />
+                    <keyFrame time="1.0" visibility="false" />
+                </part>
+				<part node="1|3|0">
+                    <keyFrame time="0.0" collisionActive="true"/>
+                    <keyFrame time="1.0" collisionActive="false"/>
+                </part>
+                <part node="1|3|2|1|1|0">
+                    <keyFrame time="0.0" visibility="false"/>
+                    <keyFrame time="1.0" visibility="true"/>
+                </part>
+                <part node="1|3|2|1|2|0">
+                    <keyFrame time="0.0" visibility="true"/>
+                    <keyFrame time="1.0" visibility="false"/>
+                </part>
+            </animation>
+            <controls triggerNode="1|3|2|0" posAction="ACTIVATE_HANDTOOL" posText="action_turnOnSwitchBox" negText="action_turnOffSwitchBox"/>
+        </animatedObject>
+		<animatedObject saveId="switch_03">
+            <animation duration="0.5">
+                <part node="1|3|3|1|0">
+					<keyFrame time="0.0" rotation="90 0 0"/>
+					<keyFrame time="1.0" rotation="-51 0 0"/>
+				</part>
+				<part node="4">
+                    <keyFrame time="0.0" visibility="true" />
+                    <keyFrame time="1.0" visibility="false" />
+                </part>
+                <part node="1|3|3|1|1|0">
+                    <keyFrame time="0.0" visibility="true"/>
+                    <keyFrame time="1.0" visibility="false"/>
+                </part>
+                <part node="1|3|3|1|2|0">
+                    <keyFrame time="0.0" visibility="false"/>
+                    <keyFrame time="1.0" visibility="true"/>
+                </part>
+            </animation>
+            <controls triggerNode="1|3|3|0" posAction="ACTIVATE_HANDTOOL" posText="action_turnOnIcon" negText="action_turnOffIcon"/>
+        </animatedObject>
+    </animatedObjects>
+    <sellingStation stationName="$l10n_distillery" appearsOnPDA="false" appearsOnStats="true" storageRadius="0" litersForFullPriceDrop="150000" fullPriceRecoverHours="48">
+        <unloadTrigger exactFillRootNode="1|0|0|0" baleTriggerNode="1|0|0|2" sellTriggerNode="1|0|0|1|2" />
+        <fillType name="wheat"		      priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="barley"           priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="sugarCane"  	  priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="sugarBeet"	      priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="poppy"            priceScale="1.01" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="hemp"             priceScale="1.01" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="maize"            priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="potato"           priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+        <fillType name="oat"              priceScale="1" supportsGreatDemand="true" disablePriceDrop="false" />
+    </sellingStation>
+    <clearAreas>
+        <clearArea startNode="3|1|0" widthNode="3|1|0|0" heightNode="3|1|0|1" />
+    </clearAreas>
+    <leveling requireLeveling="true" maxSmoothDistance="5" maxSlope="30" maxEdgeAngle="20">
+        <levelAreas>
+            <levelArea startNode="3|1|0" widthNode="3|1|0|0" heightNode="3|1|0|1" />
+        </levelAreas>
+    </leveling>
+    <seasons>
+        <maskAreas>
+            <maskArea startNode="3|0|0" widthNode="3|0|0|0" heightNode="3|0|0|1" />
+        </maskAreas>
+    </seasons>
+    <tipOcclusionUpdateArea sizeX="10" sizeZ="6" />
+    <triggerMarkers>
+        <triggerMarker node="0|1|0"/>
+        <triggerMarker node="0|1|1"/>
+        <triggerMarker node="0|1|2"/>
+        <triggerMarker node="0|1|3"/>
+    </triggerMarkers>
+</placeable>

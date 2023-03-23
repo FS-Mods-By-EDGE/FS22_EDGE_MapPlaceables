@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Crater Bay" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="8" filename="../textures/back_of_sign_so_not_enter.png"/>
+    <File fileId="6" filename="../textures/barrier_diffuse.png"/>
+    <File fileId="7" filename="../textures/sign_do_not_enter.png"/>
+    <File fileId="1" filename="../textures/vehicleShop_diffuse.dds"/>
+    <File fileId="2" filename="../textures/vehicleShop_normal.dds"/>
+    <File fileId="3" filename="../textures/vehicleShop_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="back_of_sign_750mm" materialId="7">
+      <Texture fileId="8"/>
+    </Material>
+    <Material name="barrier_mat" materialId="9">
+      <Texture fileId="6"/>
+    </Material>
+    <Material name="gray_mat" materialId="20" diffuseColor="0.584314 0.584314 0.584314 1">
+    </Material>
+    <Material name="lambert1" materialId="24" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="sign_750mm" materialId="34">
+      <Texture fileId="7"/>
+    </Material>
+    <Material name="vehicleShop_mat" materialId="36">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EDGE_shopBarriers01.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="Gate" translation="278.311 58.3998 478.868" rotation="-2.17646e-06 0 1.72901e-05" nodeId="175">
+      <Shape shapeId="1" name="eGatePilers" translation="0 0 -0.327283" scale="0.93 1.4 1.4" clipDistance="120" nodeId="176" materialIds="36" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="col" translation="4.38676 0 0" scale="0.05 1 1" visibility="false" static="true" nodeId="177" materialIds="24" nonRenderable="true"/>
+        <Shape shapeId="2" name="col" translation="-4.39298 0 0" scale="0.05 1 1" visibility="false" static="true" nodeId="178" materialIds="24" nonRenderable="true"/>
+      </Shape>
+      <Shape shapeId="3" name="barrierTrigger" translation="0.372043 -0.0333295 7.32192" rotation="-180 0 180" static="true" trigger="true" collisionMask="14688256" clipDistance="1300" nodeId="179" materialIds="20" nonRenderable="true">
+        <Shape shapeId="4" name="barrier" translation="0 0 8.14142" static="true" clipDistance="1300" nodeId="180" materialIds="9" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="5" name="barrierBar" translation="-5.2 1 0" rotation="0 0 90" kinematic="true" clipDistance="1300" nodeId="181" materialIds="9" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="signDoNotEnter" translation="6 -2.74998 0.141558" clipDistance="300" nodeId="182">
+              <Shape shapeId="6" name="sign" translation="0 2.75 0.1" rotation="90 0 0" clipDistance="150" nodeId="183" materialIds="34" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="6" name="back_of_sign" translation="1.54e-08 2.75 0.1" rotation="-90 0 180" clipDistance="150" nodeId="184" materialIds="7" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+          </Shape>
+        </Shape>
+      </Shape>
+    </TransformGroup>
+    <TransformGroup name="Gate" translation="278.311 58.3998 507.566" rotation="180 0 180" scale="0.91983 1 1" nodeId="161">
+      <Shape shapeId="1" name="eGatePilers" translation="0 0 -0.405616" scale="1 1.4 1.4" clipDistance="120" nodeId="162" materialIds="36" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="col" translation="4.38676 0 0" scale="0.05 1 1" visibility="false" static="true" nodeId="163" materialIds="24" nonRenderable="true"/>
+        <Shape shapeId="2" name="col" translation="-4.39298 0 0" scale="0.05 1 1" visibility="false" static="true" nodeId="164" materialIds="24" nonRenderable="true"/>
+      </Shape>
+      <Shape shapeId="3" name="barrierTrigger" translation="-0.601349 -0.123993 -4.55456" rotation="-7.84145e-06 0 -6.68918e-06" scale="2.17431 1 0.6" static="true" trigger="true" collisionMask="14688256" clipDistance="1300" nodeId="165" materialIds="20" nonRenderable="true">
+        <Shape shapeId="4" name="barrier" translation="-0.222754 0 7.77191" scale="0.55 1 1.6" static="true" clipDistance="1300" nodeId="166" materialIds="9" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="5" name="barrierBar" translation="-5.2 1 0" rotation="0 0 90" kinematic="true" clipDistance="1300" nodeId="167" materialIds="9" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="signDoNotEnter" translation="6 -2.74998 0.141558" clipDistance="300" nodeId="168">
+              <Shape shapeId="6" name="sign" translation="0 2.75 0.1" rotation="90 0 0" clipDistance="150" nodeId="169" materialIds="34" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="6" name="back_of_sign" translation="1.54e-08 2.75 0.1" rotation="-90 0 180" clipDistance="150" nodeId="170" materialIds="7" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+          </Shape>
+        </Shape>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="179">
+      <Attribute name="onCreate" type="scriptCallback" value="Barrier.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="165">
+      <Attribute name="onCreate" type="scriptCallback" value="Barrier.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="doormat" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="../textures/EDGE_Decals_diffuse.dds"/>
+    <File fileId="5" filename="../textures/EDGE_Decals_normal.dds"/>
+    <File fileId="6" filename="../textures/EDGE_Decals_specular.dds"/>
+    <File fileId="1" filename="../textures/doormat_diffuse.dds"/>
+    <File fileId="2" filename="../textures/doormat_normal.dds"/>
+    <File fileId="3" filename="../textures/doormat_specular.dds"/>
+    <File fileId="9" filename="../textures/huds/triggerIconsCartoon_diffuse.modDesc"/>
+    <File fileId="8" filename="../textures/huds/triggerIconsCartoon_normal.modDesc"/>
+    <File fileId="10" filename="$data/shaders/fxCircleShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="default" materialId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="EDGE_decals_mat" materialId="5">
+      <Texture fileId="4"/>
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+    </Material>
+    <Material name="lambert1" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="triggerIconsCartoon_mat" materialId="7" alphaBlending="true" customShaderId="10" customShaderVariation="PULSATING">
+      <Normalmap fileId="8"/>
+      <Emissivemap fileId="9"/>
+      <CustomParameter name="scaleParameters" value="0.75 1 2.5 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="doormat.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="doormat" nodeId="15">
+      <Shape shapeId="1" name="mat" scale="1.2 1.2 1.2" static="true" clipDistance="88" nodeId="17" materialIds="4" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="2" name="sign" translation="0.593166 0.00519953 0.296746" rotation="-90 -0 0" scale="0.15 0.15 0.1" clipDistance="300" nodeId="34" materialIds="5" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="3" name="logo" clipDistance="300" nodeId="35" materialIds="5" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+      <TransformGroup name="gameplay" nodeId="171">
+        <TransformGroup name="mapPosition" translation="5.5 0 0" nodeId="179"/>
+        <TransformGroup name="spawnPoint" nodeId="18"/>
+        <Shape shapeId="4" name="sleepTrigger" scale="1.3 1 1.3" static="true" trigger="true" nodeId="16" materialIds="6" nonRenderable="true" distanceBlending="false"/>
+      </TransformGroup>
+      <Camera name="sleepCamera" translation="-2.82726 1.75679 4.38441" rotation="-13.8311 -33.541 -2.56084e-07" nodeId="19" fov="60" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+      <Shape shapeId="5" name="tipBlocker" static="true" collisionMask="524288" nodeId="20" materialIds="6" nonRenderable="true"/>
+      <TransformGroup name="areaDefinitions" nodeId="21">
+        <TransformGroup name="clearAreas" nodeId="22">
+          <TransformGroup name="start" translation="0.5 0 -0.25" nodeId="44">
+            <TransformGroup name="width" translation="-1 0 0" nodeId="45"/>
+            <TransformGroup name="height" translation="0 0 0.5" nodeId="46"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="levelingAreas" nodeId="26">
+          <TransformGroup name="start" translation="0.5 0 -0.25" nodeId="41">
+            <TransformGroup name="width" translation="-1 0 0" nodeId="42"/>
+            <TransformGroup name="height" translation="0 0 0.5" nodeId="43"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="snowAreas" nodeId="30">
+          <TransformGroup name="start" translation="0.5 0 -0.25" nodeId="31">
+            <TransformGroup name="width" translation="-1 0 0" nodeId="32"/>
+            <TransformGroup name="height" translation="0 0 0.5" nodeId="33"/>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="triggerIcons" nodeId="36">
+        <Shape shapeId="6" name="triggerIcon18_sleep" translation="0 1 0" clipDistance="500" nodeId="37" materialIds="7" castsShadows="true" receiveShadows="true">
+          <TransformGroup name="illum" translation="0 -0.75 0" nodeId="38">
+            <Light name="pointLight" translation="0 0.1 0" rotation="0 -90 0" clipDistance="300" nodeId="39" type="point" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="10"/>
+          </TransformGroup>
+        </Shape>
+        <Shape shapeId="7" name="playerTrigger" rotation="-1.73028e-05 -90 0" visibility="false" static="true" trigger="true" clipDistance="25" nodeId="181" materialIds="6" nonRenderable="true"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="38">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

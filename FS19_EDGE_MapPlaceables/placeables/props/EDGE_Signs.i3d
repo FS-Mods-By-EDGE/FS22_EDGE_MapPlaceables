@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="EDGEsellingStationGeneric01" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="1" filename="../textures/EDGE_Decals_diffuse.dds"/>
+    <File fileId="2" filename="../textures/EDGE_Decals_normal.dds"/>
+    <File fileId="3" filename="../textures/EDGE_Decals_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="EDGE_decals_mat" materialId="482">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EDGE_Signs.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="sign" nodeId="509">
+      <Shape shapeId="1" name="banner" translation="0 1.5299 0.0840652" scale="3 3 2" clipDistance="300" nodeId="494" materialIds="482" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="logoBanner" clipDistance="300" nodeId="495" materialIds="482" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="3" name="sign" translation="0 0 -0.0154388" scale="1.33287 0.65858 1" static="true" clipDistance="300" nodeId="496" materialIds="482" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+      <Shape shapeId="4" name="signRound" translation="0 1.43292 0.0505883" scale="3 3 2" static="true" clipDistance="300" nodeId="527" materialIds="482" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="5" name="logoRound" clipDistance="300" nodeId="528" materialIds="482" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+      <Shape shapeId="3" name="sign" translation="0 1.43292 0.0505883" scale="3 3 2" static="true" clipDistance="300" nodeId="511" materialIds="482" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="6" name="logo" clipDistance="300" nodeId="512" materialIds="482" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

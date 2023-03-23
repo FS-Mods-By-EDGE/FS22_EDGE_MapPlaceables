@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Crater Bay" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="18" filename="../textures/EDGE_Decals_diffuse.dds"/>
+    <File fileId="19" filename="../textures/EDGE_Decals_normal.dds"/>
+    <File fileId="20" filename="../textures/EDGE_Decals_specular.dds"/>
+    <File fileId="5" filename="$data/maps/textures/european/props/gasPump_decals.dds"/>
+    <File fileId="2" filename="$data/maps/textures/european/props/gasPump_diffuse.dds"/>
+    <File fileId="3" filename="$data/maps/textures/european/props/gasPump_normal.dds"/>
+    <File fileId="4" filename="$data/maps/textures/european/props/gasPump_specular.dds"/>
+    <File fileId="14" filename="$data/maps/textures/european/props/lightPoleSetGlass_diffuse.dds"/>
+    <File fileId="15" filename="$data/maps/textures/european/props/lightPoleSetGlass_specular.dds"/>
+    <File fileId="17" filename="$data/maps/textures/european/props/lightPoleSet_emissive.dds"/>
+    <File fileId="11" filename="$data/maps/textures/european/props/neonLightSmall_diffuse.dds"/>
+    <File fileId="12" filename="$data/maps/textures/european/props/neonLightSmall_normal.dds"/>
+    <File fileId="13" filename="$data/maps/textures/european/props/neonLightSmall_specular.dds"/>
+    <File fileId="16" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="8" filename="$data/shared/default_normal.png"/>
+    <File fileId="7" filename="$data/shared/window02_diffuse.png"/>
+    <File fileId="9" filename="$data/shared/window_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="EDGE_decals_mat" materialId="65">
+      <Texture fileId="18"/>
+      <Normalmap fileId="19"/>
+      <Glossmap fileId="20"/>
+    </Material>
+    <Material name="gasPump_decals_mat" materialId="30" specularColor="0.494118 1 0.494118" alphaBlending="true">
+      <Texture fileId="5"/>
+    </Material>
+    <Material name="gasPump_mat" materialId="24">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="lambert1" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="lightPoleSetGlass_mat" materialId="28" alphaBlending="true" customShaderId="16">
+      <Texture fileId="14"/>
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="15"/>
+      <Custommap name="mEmissiveMap" fileId="17"/>
+      <CustomParameter name="lightControl" value="1 1 1 1"/>
+    </Material>
+    <Material name="neonLightSmall_mat" materialId="29">
+      <Texture fileId="11"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+    </Material>
+    <Material name="UnnamedMaterial" materialId="7" diffuseColor="1 1 1 1">
+    </Material>
+    <Material name="window02_mat" materialId="26" alphaBlending="true">
+      <Texture fileId="7"/>
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="9"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="gasStation02.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="gasStation02" nodeId="15">
+      <Shape shapeId="1" name="gasStationTrigger" translation="0 1.5 0" static="true" trigger="true" collisionMask="1088421888" nodeId="47" materialIds="7" nonRenderable="true" distanceBlending="false"/>
+      <TransformGroup name="mapPosition" translation="0 0 5" nodeId="17"/>
+      <Shape shapeId="2" name="gasPump" scale="1.2 1 1" clipDistance="100" nodeId="43" materialIds="24" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="3" name="decals" clipDistance="30" nodeId="44" materialIds="30" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="4" name="glass" clipDistance="50" nodeId="45" materialIds="26" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="5" name="col" visibility="false" static="true" clipDistance="300" nodeId="46" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+      <Shape shapeId="6" name="neonLightSmall" translation="0.000267561 1.35864 -0.0280899" rotation="180 -0 -180" scale="0.6 0.8 0.8" clipDistance="60" nodeId="57" materialIds="29" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="58">
+          <Shape shapeId="7" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="59" materialIds="28" castsShadows="true" receiveShadows="true"/>
+          <Light name="pointLight1" translation="0 -0.0620853 0" clipDistance="75" nodeId="60" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+        </TransformGroup>
+        <Shape shapeId="8" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="61" materialIds="6" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+      <Shape shapeId="9" name="banner" translation="-1.21109 0.211649 0.00841541" rotation="-0 -90 0" scale="1 1 2" clipDistance="300" nodeId="74" materialIds="65" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="10" name="logoBanner" clipDistance="300" nodeId="75" materialIds="65" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="11" name="sign" translation="0 0 -0.0154388" scale="1.33287 0.65858 1" static="true" clipDistance="300" nodeId="76" materialIds="65" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+      <Shape shapeId="12" name="signRound" translation="1.20064 0.47 -2.4648e-10" rotation="-0 90 0" scale="0.6 0.6 0.7" static="true" clipDistance="300" nodeId="77" materialIds="65" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="13" name="logoRound" clipDistance="300" nodeId="78" materialIds="65" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="15">
+      <Attribute name="mapPositionIndex" type="string" value="1"/>
+    </UserAttribute>
+    <UserAttribute nodeId="58">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

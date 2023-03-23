@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="BunkerSiloDouble" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="26" filename="../textures/groundStains_diffuse.png"/>
+    <File fileId="1" filename="../textures/Concrete00_diffuse.dds"/>
+    <File fileId="2" filename="../textures/Concrete00_normal.dds"/>
+    <File fileId="3" filename="../textures/Concrete00_specular.dds"/>
+    <File fileId="19" filename="../textures/EDGE_Decals_diffuse.dds"/>
+    <File fileId="20" filename="../textures/EDGE_Decals_normal.dds"/>
+    <File fileId="21" filename="../textures/EDGE_Decals_specular.dds"/>
+    <File fileId="4" filename="../textures/addons_diffuse.dds"/>
+    <File fileId="5" filename="../textures/addons_normal.dds"/>
+    <File fileId="6" filename="../textures/addons_specular.dds"/>
+    <File fileId="22" filename="$data/maps/textures/american/props/decalAsphaltCrack10_diffuse.png"/>
+    <File fileId="23" filename="$data/maps/textures/american/props/decalAsphaltCrack10_normal.png"/>
+    <File fileId="24" filename="$data/maps/textures/american/props/decalOilSlicks_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/textures/european/portTrims_diffuse.png"/>
+    <File fileId="8" filename="$data/maps/textures/european/portTrims_normal.png"/>
+    <File fileId="9" filename="$data/maps/textures/european/portTrims_specular.png"/>
+    <File fileId="14" filename="$data/maps/textures/european/props/lightPoleSetGlass_diffuse.png"/>
+    <File fileId="16" filename="$data/maps/textures/european/props/lightPoleSetGlass_specular.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/props/lightPoleSet_diffuse.dds"/>
+    <File fileId="18" filename="$data/maps/textures/european/props/lightPoleSet_emissive.png"/>
+    <File fileId="11" filename="$data/maps/textures/european/props/lightPoleSet_normal.dds"/>
+    <File fileId="12" filename="$data/maps/textures/european/props/lightPoleSet_specular.dds"/>
+    <File fileId="27" filename="$data/maps/textures/shared/decalsRoadDamaged_diffuse.png"/>
+    <File fileId="28" filename="$data/maps/textures/shared/default_normal.png"/>
+    <File fileId="31" filename="$data/maps/textures/shared/warningStripes_diffuse.png"/>
+    <File fileId="32" filename="$data/maps/textures/shared/warningStripes_normal.png"/>
+    <File fileId="33" filename="$data/maps/textures/shared/warningStripes_specular.png"/>
+    <File fileId="17" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="25" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="15" filename="$data/shared/default_normal.png"/>
+    <File fileId="29" filename="$data/shared/default_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="addons_mat" materialId="4">
+      <Texture fileId="4"/>
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+    </Material>
+    <Material name="concreteWalls_mat" materialId="5">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="decalAsphaltCrack10_mat" materialId="6" alphaBlending="true">
+      <Texture fileId="22"/>
+      <Normalmap fileId="23"/>
+    </Material>
+    <Material name="decalsRoadDamaged_mat" materialId="7" customShaderId="25">
+      <Texture fileId="27"/>
+    </Material>
+    <Material name="decalsRoadDamaged_mat" materialId="8" customShaderId="25">
+      <Texture fileId="27"/>
+      <Normalmap fileId="28"/>
+      <Glossmap fileId="29"/>
+    </Material>
+    <Material name="decalTrashPapers_mat" materialId="9" alphaBlending="true" customShaderId="25">
+      <Texture fileId="24"/>
+    </Material>
+    <Material name="EDGE_Bunkers" materialId="10" diffuseColor="0.929412 0.384314 0.384314 1">
+    </Material>
+    <Material name="EDGE_decals_mat" materialId="11">
+      <Texture fileId="19"/>
+      <Normalmap fileId="20"/>
+      <Glossmap fileId="21"/>
+    </Material>
+    <Material name="goundStains_mat" materialId="12" alphaBlending="true">
+      <Texture fileId="26"/>
+    </Material>
+    <Material name="lambert1" materialId="13" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="lightPoleSet_mat" materialId="14">
+      <Texture fileId="10"/>
+      <Normalmap fileId="11"/>
+      <Glossmap fileId="12"/>
+    </Material>
+    <Material name="lightPoleSetGlass_mat" materialId="15" alphaBlending="true" customShaderId="17">
+      <Texture fileId="14"/>
+      <Normalmap fileId="15"/>
+      <Glossmap fileId="16"/>
+      <Custommap name="mEmissiveMap" fileId="18"/>
+      <CustomParameter name="lightControl" value="1 1 1 1"/>
+    </Material>
+    <Material name="portTrims_mat" materialId="16">
+      <Texture fileId="7"/>
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="9"/>
+    </Material>
+    <Material name="warningStripes_mat" materialId="17">
+      <Texture fileId="31"/>
+      <Normalmap fileId="32"/>
+      <Glossmap fileId="33"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="BunkerSiloDouble_L.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="BunkerSiloDouble_L" nodeId="187">
+      <Shape shapeId="1" name="SiloWall" translation="0 1.957 0" clipDistance="1000" nodeId="188" materialIds="5" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="SiloAddons" translation="-0.0913696 0.263 23.9208" clipDistance="500" nodeId="189" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="3" name="roadTrimB_03" translation="-0.299999 -1.95 24" rotation="-0 -90 0" scale="1 1 1.75" clipDistance="100" nodeId="190" materialIds="16" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="3" name="roadTrimB_03" translation="0 0 8" clipDistance="100" nodeId="191" materialIds="16" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="3" name="roadTrimB_03" translation="0.300001 -1.95 24" rotation="-0 90 0" scale="1 1 1.75" clipDistance="100" nodeId="192" materialIds="16" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="3" name="roadTrimB_03" translation="0 0 8" clipDistance="100" nodeId="193" materialIds="16" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+      </Shape>
+      <TransformGroup name="SiloLightPoles" translation="0 2 0" nodeId="194">
+        <TransformGroup name="SiloLightPoles00" nodeId="195">
+          <Shape shapeId="4" name="SiloLightPoleDouble" translation="0 0 1" clipDistance="300" nodeId="196" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="5" name="SiloLightPoleDoubleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="197" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="198">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="199" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="6" name="glass01" translation="-2.24503e-11 1.94545e-15 -0.000256801" rotation="180 -5.00896e-06 -180" clipDistance="100" nodeId="200" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="201" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+              <Light name="spotLight01" translation="2.08664 7.78821 3.41269e-07" rotation="90 -5.00896e-06 -180" visibility="false" clipDistance="75" nodeId="202" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="4" name="SiloLightPoleDouble" translation="0 0 -17" clipDistance="300" nodeId="203" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="5" name="SiloLightPoleDoubleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="204" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="205">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="206" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="6" name="glass01" translation="-2.24503e-11 1.94545e-15 -0.000256801" rotation="180 -5.00896e-06 -180" clipDistance="100" nodeId="207" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="208" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+              <Light name="spotLight01" translation="2.08664 7.78821 3.41269e-07" rotation="90 -5.00896e-06 -180" visibility="false" clipDistance="75" nodeId="209" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="4" name="SiloLightPoleDouble" translation="0 0 19" clipDistance="300" nodeId="210" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="5" name="SiloLightPoleDoubleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="211" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="212">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="213" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="6" name="glass01" translation="-2.24503e-11 1.94545e-15 -0.000256801" rotation="180 -5.00896e-06 -180" clipDistance="100" nodeId="214" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="215" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+              <Light name="spotLight01" translation="2.08664 7.78821 3.41269e-07" rotation="90 -5.00896e-06 -180" visibility="false" clipDistance="75" nodeId="216" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="SiloLightPoles01" nodeId="217">
+          <Shape shapeId="7" name="SiloLightPole" translation="28.35 -1.99251e-08 1" rotation="5.00896e-06 -0 -5.00896e-06" clipDistance="300" nodeId="218" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="219" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="220">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="221" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="222" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="7" name="SiloLightPole" translation="28.35 0 -17" rotation="5.00896e-06 -0 -5.00896e-06" clipDistance="300" nodeId="223" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="224" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="225">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="226" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="227" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="7" name="SiloLightPole" translation="28.35 0 19" rotation="5.00896e-06 -0 -5.00896e-06" clipDistance="300" nodeId="228" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="229" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="230">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="231" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="232" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="7" name="SiloLightPole" translation="14.175 -1.37204e-06 -23.7" rotation="1.00179e-05 90 0" clipDistance="300" nodeId="233" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="234" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="235">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="236" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="237" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="SiloLightPoles02" nodeId="238">
+          <Shape shapeId="7" name="SiloLightPole" translation="-28.35 8.28936e-08 1" rotation="-180 -5.00896e-06 -180" clipDistance="300" nodeId="239" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="240" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="241">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="242" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="243" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="7" name="SiloLightPole" translation="-28.35 0 19" rotation="-180 -5.00896e-06 -180" clipDistance="300" nodeId="244" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="245" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="246">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="247" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="248" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="7" name="SiloLightPole" translation="-28.35 0 -17" rotation="-180 -5.00896e-06 -180" clipDistance="300" nodeId="249" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="250" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="251">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="252" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="253" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+          <Shape shapeId="7" name="SiloLightPole" translation="-14.175 0 -23.7" rotation="-0 90 0" clipDistance="300" nodeId="254" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="SiloLightPoleCol" visibility="false" static="true" restitution="0.1" staticFriction="0.6" dynamicFriction="0.7" density="1.6" nodeId="255" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+            <TransformGroup name="illum" rotation="-2.17028e-10 0 2.73207e-05" nodeId="256">
+              <Shape shapeId="6" name="glass00" translation="0 0 0.000256801" clipDistance="100" nodeId="257" materialIds="15" castsShadows="true" receiveShadows="true"/>
+              <Light name="spotLight00" translation="-2.08664 7.78821 -5.2363e-07" rotation="-90 0 0" visibility="false" clipDistance="75" nodeId="258" type="spot" color="0.8 0.5 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="20" coneAngle="100" dropOff="1"/>
+            </TransformGroup>
+          </Shape>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="9" name="Col" translation="0 2 0" visibility="false" static="true" restitution="1" staticFriction="0.7" dynamicFriction="0.7" nodeId="259" materialIds="10" nonRenderable="true" distanceBlending="false"/>
+      <TransformGroup name="decals" translation="0 2 0" nodeId="260">
+        <Shape shapeId="10" name="banner" translation="-29.5186 -1.72924 23" rotation="3.86287 90 0" scale="3 3 2" clipDistance="300" nodeId="261" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="11" name="signRound" translation="-0.0521412 1.95506 22.3735" rotation="-90 -0 0" scale="3 3 2" clipDistance="300" nodeId="262" materialIds="11" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="12" name="logoRound" clipDistance="300" nodeId="263" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="13" name="sign" translation="28.444 0.688058 -24.2129" rotation="177.088 -5.00896e-06 -180" scale="2 2 1" clipDistance="300" nodeId="264" materialIds="11" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="14" name="logo" clipDistance="300" nodeId="265" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="10" name="banner" translation="29.351 -1.74055 23" rotation="3.86287 -90 0" scale="3 3 2" clipDistance="300" nodeId="266" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="13" name="sign" translation="-28.444 0.688058 -24.2129" rotation="177.088 -5.00896e-06 -180" scale="2 2 1" clipDistance="300" nodeId="267" materialIds="11" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="14" name="logo" clipDistance="300" nodeId="268" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <TransformGroup name="groundDecals" translation="-0.785 -2.01405 0.205518" visibility="false" nodeId="269">
+          <Shape shapeId="15" name="decalAsphaltCrack10" translation="-13.027 -0.0868075 12.5639" scale="2.5 1 2.5" clipDistance="150" nodeId="270" materialIds="6" receiveShadows="true"/>
+          <Shape shapeId="15" name="decalAsphaltCrack10" translation="14.5974 -0.0868075 12.7209" scale="2.5 1 2.5" clipDistance="150" nodeId="271" materialIds="6" receiveShadows="true"/>
+          <Shape shapeId="16" name="decalOilSlick01" translation="0.785384 0.00704741 -3.0215" rotation="-1.34221e-05 -2.3468e-12 -1.00164e-05" scale="9 1 9" clipDistance="50" nodeId="272" materialIds="9" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="15" name="decalAsphaltCrack10" translation="5.158 -0.000953197 -1.26552" rotation="-180 44.5217 -180" scale="1.5 1 1.5" clipDistance="150" nodeId="273" materialIds="6" receiveShadows="true"/>
+          <Shape shapeId="17" name="groundStain01" translation="0.885184 0.00704479 -10.1478" rotation="-180 -1.1734e-12 -180" scale="2 1 2" clipDistance="200" nodeId="274" materialIds="12" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="17" name="groundStain01" translation="5.05878 0.00704885 7.70927" rotation="-180 1.1734e-12 180" scale="4 1 4" clipDistance="200" nodeId="275" materialIds="12" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="18" name="groundStain02" translation="-3.12821 0.00704908 8.9548" rotation="-180 26.775 -180" scale="4 1 4" clipDistance="200" nodeId="276" materialIds="12" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="18" name="groundStain02" translation="8.74321 0.00704479 -10.1445" rotation="3.09617e-05 90 0" scale="1.5 1 1.5" clipDistance="200" nodeId="277" materialIds="12" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="18" name="groundStain02" translation="-7.29692 0.00704455 -10.8355" rotation="-180 -21.8556 180" clipDistance="200" nodeId="278" materialIds="12" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="19" name="decal" translation="5.48832 0.0220475 -10.7645" rotation="-4.1398e-06 90 0" clipDistance="50" nodeId="279" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="20" name="decal2" translation="-7.45392 0.0220472 -8.63614" rotation="5.00742e-06 90 0" clipDistance="50" nodeId="280" materialIds="8" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="21" name="decal3" translation="-4.82062 0.022051 -10.7251" rotation="-180 64.5314 -180" clipDistance="50" nodeId="281" materialIds="8" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="22" name="decal4" translation="8.39426 0.0220463 -6.61055" rotation="9.09087e-10 90 0" clipDistance="50" nodeId="282" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="23" name="decal5" translation="-6.25534 0.0220457 -4.86928" rotation="-180 -85.2221 180" clipDistance="50" nodeId="283" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="24" name="decal1" translation="-7.12932 0.0220498 8.72948" rotation="-180 -1.1734e-12 -180" clipDistance="50" nodeId="284" materialIds="8" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="areaDefinitions" rotation="5.00896e-06 5.00896e-06 -5.00896e-06" nodeId="285">
+        <TransformGroup name="levelAreas" rotation="-180 -4.37897e-13 -180" nodeId="286">
+          <TransformGroup name="start" translation="-27.5 0 -24" nodeId="287">
+            <TransformGroup name="width" translation="55 0 0" nodeId="288"/>
+            <TransformGroup name="height" translation="0 0 47" nodeId="289"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="snowAreas" nodeId="290"/>
+        <TransformGroup name="clearAreas" rotation="-180 0 -180" nodeId="291">
+          <TransformGroup name="start" translation="-25 0 -22" nodeId="292">
+            <TransformGroup name="width" translation="50 0 0" nodeId="293"/>
+            <TransformGroup name="height" translation="0 0 44" nodeId="294"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="bunkerSilos" clipDistance="800" nodeId="295">
+          <TransformGroup name="bunkerSilo01" clipDistance="800" objectMask="65534" nodeId="296">
+            <TransformGroup name="bunkerSiloArea" nodeId="297">
+              <Shape shapeId="25" name="interactionTrigger" translation="-14.3 0 0.165" visibility="false" static="true" trigger="true" collisionMask="15736832" nodeId="298" materialIds="13" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <TransformGroup name="start" translation="-0.5 -5.35902e-06 24" rotation="180 -4.07111e-13 180" nodeId="299">
+                <TransformGroup name="width" translation="27.5 0 0" nodeId="300"/>
+                <TransformGroup name="height" translation="0 0 47.5" nodeId="301"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="bunkerSilo02" clipDistance="800" objectMask="65534" nodeId="302">
+            <TransformGroup name="bunkerSiloArea" nodeId="303">
+              <Shape shapeId="26" name="interactionTrigger" translation="14.3 -1.20206e-06 0.165" visibility="false" static="true" trigger="true" collisionMask="15736832" nodeId="304" materialIds="13" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              <TransformGroup name="start" translation="0.5 -5.35902e-06 24" rotation="180 -4.07111e-13 180" nodeId="305">
+                <TransformGroup name="width" translation="-27.5 0 0" nodeId="306"/>
+                <TransformGroup name="height" translation="0 0 47.5" nodeId="307"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="warningStripes" rotation="2.38271e-07 -0 1.54048e-09" nodeId="308">
+        <TransformGroup name="silo01" translation="-14.3 -6.26642e-05 0" rotation="-4.05996e-06 -90 0" nodeId="309">
+          <Shape shapeId="27" name="warningStripesCorner1" translation="23.75 0 -13.1" rotation="5.91968e-06 -90 0" clipDistance="200" nodeId="310" materialIds="17" receiveShadows="true" decalLayer="1">
+            <Shape shapeId="28" name="warningStripesCorner2" translation="26.1 -3.04117e-06 0" rotation="-1.36604e-05 -0 8.95735e-14" clipDistance="200" nodeId="311" materialIds="17" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="silo02" translation="14.3 -6.40842e-05 0" rotation="-4.05996e-06 -90 0" nodeId="312">
+          <Shape shapeId="28" name="warningStripesCorner1" translation="23.75 -3.04117e-06 13.25" rotation="-7.7407e-06 -90 0" clipDistance="200" nodeId="313" materialIds="17" receiveShadows="true" decalLayer="1">
+            <Shape shapeId="27" name="warningStripesCorner2" translation="-26.1 3.04117e-06 0" rotation="1.36604e-05 -0 1.16678e-13" clipDistance="200" nodeId="314" materialIds="17" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="198">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="205">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="212">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="220">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="225">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="230">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="235">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="241">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="246">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="251">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="256">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>
